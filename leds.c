@@ -13,10 +13,10 @@
 
 void initLEDs(){
   // Set Tristate Registers as Outputs
-  TRISDbits.TRISD1 = TRISx_OUTPUT;
+  //FOR PRODUCTION: TRISDbits.TRISD1 = TRISx_OUTPUT;
+  //FOR TESTING:
+  TRISDbits.TRISD0 = TRISx_OUTPUT;
+  //FOR PRODUCTION: TRISDbits.TRISD2 = TRISx_OUTPUT;
+  //FOR TESTING:
   TRISDbits.TRISD2 = TRISx_OUTPUT;
-  
-  // Set Initial States
-  LATDbits.LATD1 = LATx_HIGH;
-  LATDbits.LATD2 = LATx_HIGH;
 }
