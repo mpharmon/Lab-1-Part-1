@@ -27,8 +27,8 @@ volatile STATE state = start;
 #define LATx_HIGH 1
 #define LATx_LOW 0
 
-#define START_LED LATDbits.LATD2
-#define STOP_LED LATDbits.LATD0
+#define START_LED LATGbits.LATG14
+#define STOP_LED LATGbits.LATG12
 
 /* Please note that the configuration file has changed from lab 0.
  * the oscillator is now of a different frequency.
@@ -54,13 +54,14 @@ int main(void){
 }
 
 void __ISR(_CHANGE_NOTICE_VECTOR, IPL7SRS) _CNInterrupt(void){
-    PORTD;
-    IFS1bits.CNDIF = 0;
+    PORTA;
+    IFS1bits.CNAIF = 0;
     delayUs(5000);
-    if(PORTDbits.RD6 == PORTx_LOW){// Button Pressed
+    if(PORTAbits.RA7 == PORTx_LOW){// Button Pressed
       if(state == start)state = stop;
       else if(state == stop)state = start;
-    }else if(PORTDbits.RD6 = PORTx_HIGH){// Button Released
+    }else if(PORTAbits.RA7 = PORTx_HIGH){// Button Released
+      
       // Do Nothing
     }
 }

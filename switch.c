@@ -15,19 +15,19 @@ void initSW(){
   // Set Tristate Registers as Input
   // FOR PRODUCTION: TRISDbits.TRISD3 = TRISx_INPUT;
   // FOR TESTING:
-  TRISDbits.TRISD6 = TRISx_INPUT;
+  TRISAbits.TRISA7 = TRISx_INPUT;
   // Enable Pull-Up Resistor
   // FOR PRODUCTION: CNPUDbits.CNPUD3 = CNPUx_ENABLE;
   // FOR TESTING:
-  CNPUDbits.CNPUD6 = CNPUx_ENABLE;
+  //CNPUAbits.CNPUA7 = CNPUx_ENABLE;
   // Enable Change Notification on Port
-  CNCONDbits.ON = 1;
-  // Enable Interrupt on PIN
-  CNENDbits.CNIED6 = 1;
+  CNCONAbits.ON = 1;
   // Enable CN Interrupt
-  IEC1bits.CNDIE = 1;
+  IEC1bits.CNAIE = 1;
+  // Enable Interrupt on PIN
+  CNENAbits.CNIEA7 = 1;
   // Put Interrupt Flag Down
-  IFS1bits.CNDIF = 0;
+  IFS1bits.CNAIF = 0;
   // Set Interrupt Priority
   IPC8bits.CNIP = 7;
 }
