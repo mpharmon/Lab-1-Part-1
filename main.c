@@ -1,12 +1,17 @@
-// ******************************************************************************************* //
-//
-// File:         lab1p1.c
-// Date:         
-// Authors:      
-//
-// Description: Part 1 for lab 1
-// ******************************************************************************************* //
-
+/*  
+ *  Class: ECE372a
+ * 
+ *  Group: 209
+ *
+ *  Lab: 1 Part 1
+ * 
+ *  File: main.c
+ * 
+ *  Member: Michael Harmon (Software)
+ *          Abdul Rana (Hardware)
+ *          James Beulke (System Integration)
+ *          Ali Hassan (Quality Control)
+ */
 #include <xc.h>
 #include <sys/attribs.h>
 #include "leds.h"
